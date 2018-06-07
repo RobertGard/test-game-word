@@ -90,7 +90,7 @@ class TaskController extends Controller{
         
         // Если гость , то возврашаем на главную
         if(Yii::$app->user->isGuest){
-            return $this->goHome();
+            return $this->redirect('/user/login');
         }
         
         $model = WordModel::find()->where(['string_id' => $id])->asArray()->all();
